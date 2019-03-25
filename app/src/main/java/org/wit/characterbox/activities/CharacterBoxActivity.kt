@@ -2,6 +2,8 @@
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -22,13 +24,21 @@ import org.wit.characterbox.models.CharacterBoxModel
         setContentView(R.layout.activity_main)
             app = application as MainApp
 
+            toolbarAdd.title = title
+            setSupportActionBar(toolbarAdd)
+
+            if (intent.hasExtra("characterbox_edit")) {
+                characterbox = intent.extras.getParcelable<CharacterBoxModel>("characterbox_edit")
+                characterTitle.setText(characterbox.cName)
+                actorTitle.setText(characterbox.aName)
+            }
+
         btnAdd.setOnClickListener() {
             val characterTitle = characterTitle.text.toString()
             characterbox.aName = actorTitle.text.toString()
             if (characterTitle.isNotEmpty()) {
-                app.characterboxes.add(characterbox.copy())
+                app.characterboxes.create(characterbox.copy())
                 info("add Button Pressed: $characterTitle")
-                app.characterboxes.forEach { info("add Button Pressed: ${it}")}
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
             }
@@ -37,4 +47,18 @@ import org.wit.characterbox.models.CharacterBoxModel
             }
         }
     }
+
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.menu_characterbox, menu)
+            return super.onCreateOptionsMenu(menu)
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+            when (item?.itemId) {
+                R.id.item_cancel -> {
+                    finish()
+                }
+            }
+            return super.onOptionsItemSelected(item)
+        }
 }

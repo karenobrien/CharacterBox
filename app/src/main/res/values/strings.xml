@@ -4,4 +4,5 @@
     <string name="hint_characterTitle">Character Name</string>
     <string name="hint_actorTitle">Actor Name</string>
     <string name="menu_addCharacter">Add</string>
+    <string name="menu_cancelCharacterbox">Cancel</string>
 </resources>
