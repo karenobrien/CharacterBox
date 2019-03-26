@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.card_characterbox.view.*
 import org.wit.characterbox.R
 import org.wit.characterbox.models.CharacterBoxModel
+import org.wit.characterbox.org.wit.characterbox.helpers.readImageFromPath
 
 interface CharacterBoxListener {
     fun onCharacterBoxClick(characterbox: CharacterBoxModel)
@@ -30,6 +31,7 @@ class CharacterBoxAdapter constructor(private var characterboxes: List<Character
         fun bind(characterbox: CharacterBoxModel,  listener : CharacterBoxListener) {
             itemView.characterName.text = characterbox.cName
             itemView.actorName.text = characterbox.aName
+            itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, characterbox.image))
             itemView.setOnClickListener { listener.onCharacterBoxClick(characterbox) }
         }
     }

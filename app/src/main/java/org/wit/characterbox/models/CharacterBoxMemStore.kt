@@ -27,6 +27,7 @@ class CharacterBoxMemStore : CharacterBoxStore, AnkoLogger {
         if (foundCharacterBox != null) {
             foundCharacterBox.cName = characterbox.cName
             foundCharacterBox.aName = characterbox.aName
+            foundCharacterBox.image = characterbox.image
             logAll()
         }
     }

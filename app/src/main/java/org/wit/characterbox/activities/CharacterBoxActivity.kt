@@ -41,6 +41,9 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
                 actorTitle.setText(characterbox.aName)
                 btnAdd.setText(R.string.save_characterbox)
                 characterImage.setImageBitmap(readImageFromPath(this, characterbox.image))
+                if (characterbox.image != null) {
+                    chooseImage.setText(R.string.change_character_image)
+                }
             }
 
             btnAdd.setOnClickListener() {
@@ -91,6 +94,7 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
                     if (data != null) {
                         characterbox.image = data.getData().toString()
                         characterImage.setImageBitmap(readImage(this, resultCode, data))
+                        chooseImage.setText(R.string.change_character_image)
                     }
                 }
             }
