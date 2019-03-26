@@ -5,4 +5,8 @@
     <string name="hint_actorTitle">Actor Name</string>
     <string name="menu_addCharacter">Add</string>
     <string name="menu_cancelCharacterbox">Cancel</string>
+    <string name="enter_characterbox_title"> Please enter a Character Title </string>
+    <string name="save_characterbox"> Save Character </string>
+    <string name="button_addImage"> Add Image </string>
+    <string name="select_character_image">Select image</string>
 </resources>

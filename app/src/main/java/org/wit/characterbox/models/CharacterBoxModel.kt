@@ -6,4 +6,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class CharacterBoxModel(var id: Long = 0,
                              var cName: String = "",
-                             var aName: String = "") : Parcelable
+                             var aName: String = "",
+                             var image: String = "") : Parcelable

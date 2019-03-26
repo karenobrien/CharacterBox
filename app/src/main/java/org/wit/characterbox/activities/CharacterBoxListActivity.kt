@@ -1,5 +1,6 @@
 package org.wit.characterbox.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -44,6 +45,12 @@ class CharacterBoxListActivity : AppCompatActivity(), CharacterBoxListener {
 
     override fun onCharacterBoxClick(characterbox: CharacterBoxModel) {
         startActivityForResult(intentFor<CharacterBoxActivity>().putExtra("characterbox_edit", characterbox), 0)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //recyclerView is a widget in activity_placemark_list.xml
+        recyclerView.adapter?.notifyDataSetChanged()
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
 
