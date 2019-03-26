@@ -35,7 +35,9 @@ import org.wit.characterbox.models.CharacterBoxModel
 
         btnAdd.setOnClickListener() {
             val characterTitle = characterTitle.text.toString()
+            characterbox.cName = characterTitle
             characterbox.aName = actorTitle.text.toString()
+
             if (characterTitle.isNotEmpty()) {
                 app.characterboxes.create(characterbox.copy())
                 info("add Button Pressed: $characterTitle")
