@@ -22,6 +22,7 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
         var characterbox = CharacterBoxModel()
         lateinit var app: MainApp
         val IMAGE_REQUEST = 1
+        var edit = false;
 
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,7 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
             toolbarAdd.title = title
             setSupportActionBar(toolbarAdd)
 
-            var edit = false
+            edit = true
 
             if (intent.hasExtra("characterbox_edit")) {
                 edit = true
@@ -75,11 +76,16 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
 
         override fun onCreateOptionsMenu(menu: Menu?): Boolean {
             menuInflater.inflate(R.menu.menu_characterbox, menu)
+            if (edit && menu != null) menu.getItem(0).setVisible(true)
             return super.onCreateOptionsMenu(menu)
         }
 
         override fun onOptionsItemSelected(item: MenuItem?): Boolean {
             when (item?.itemId) {
+                R.id.item_delete -> {
+                    app.characterboxes.delete(characterbox)
+                    finish()
+                }
                 R.id.item_cancel -> {
                     finish()
                 }

@@ -24,8 +24,7 @@ class CharacterBoxListActivity : AppCompatActivity(), CharacterBoxListener {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        //recyclerView.adapter = CharacterBoxAdapter(app.characterboxes.findAll())
-        recyclerView.adapter = CharacterBoxAdapter(app.characterboxes.findAll(), this)
+        loadCharacters()
 
         toolbarMain.title = title
         setSupportActionBar(toolbarMain)
@@ -51,6 +50,16 @@ class CharacterBoxListActivity : AppCompatActivity(), CharacterBoxListener {
         //recyclerView is a widget in activity_placemark_list.xml
         recyclerView.adapter?.notifyDataSetChanged()
         super.onActivityResult(requestCode, resultCode, data)
+        loadCharacters()
+    }
+
+    private fun loadCharacters() {
+        showCharacters(app.characterboxes.findAll())
+    }
+
+    fun showCharacters (characterboxes: List<CharacterBoxModel>) {
+        recyclerView.adapter = CharacterBoxAdapter(characterboxes, this)
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 }
 

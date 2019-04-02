@@ -32,6 +32,10 @@ class CharacterBoxMemStore : CharacterBoxStore, AnkoLogger {
         }
     }
 
+    override fun delete(characterbox: CharacterBoxModel) {
+        characterboxes.remove(characterbox)
+    }
+
     fun logAll() {
         characterboxes.forEach{ info("${it}") }
     }

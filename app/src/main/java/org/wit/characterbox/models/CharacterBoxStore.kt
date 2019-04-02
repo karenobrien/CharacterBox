@@ -4,4 +4,5 @@ interface CharacterBoxStore {
     fun findAll(): List<CharacterBoxModel>
     fun create(characterbox: CharacterBoxModel)
     fun update(characterbox: CharacterBoxModel)
+    fun delete(characterbox: CharacterBoxModel)
 }
