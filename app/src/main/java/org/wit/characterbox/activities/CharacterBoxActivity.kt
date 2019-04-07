@@ -33,7 +33,7 @@ import org.wit.characterbox.org.wit.characterbox.helpers.showImagePicker
             toolbarAdd.title = title
             setSupportActionBar(toolbarAdd)
 
-            edit = true
+
 
             if (intent.hasExtra("characterbox_edit")) {
                 edit = true
