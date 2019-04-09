@@ -9,6 +9,6 @@ I think some concerns I have with the app is that the data persistence is just w
 If I was to continue with this app, I would make it so that the cards are the names of TV shows/movies and then within them contain the list of characters and actors that are currently available within the app. I think this would be helpful, so the person can just search the TV show/movie and find the character instead of looking through characters from a lot of other TV shows/movies. It would also be pleasing for people who enjoy organisation and keeping things in their designated folders rather than the slightly chaotic "no one has a designated place" design we've got going on right now. Of course, in the future I would also implement the search function to be able to pull data from an external API to make things easier for the users, instead of having to type it all in themselves, can just search an actor and pick the character from a dropdown menu. And the same for the TV show/movie, to search for it and then pull down the name, a description, and poster of the TV show/movie. I would also like to have different language options on the app, even though I stated above that the simple layout is in favour of non-English speakers, I think that if the app had language options to change the titles of the fields and buttons, it could make it more accessible to non-English speakers, or people who prefer to use their own language than English. 
 
 <h3>Screenshots of the app</h3>
-![](/images/cards.png)
-![](/images/addScreen.png)
-![](/images/editScreen.png)
+<img src="images/cards.png">
+<img src="images/addScreen.png">
+<img src="images/editScreen.png">
